@@ -1,5 +1,18 @@
 * Search
+
+** Dependencies
+
+   - Java 9
+   - Leiningen
+
+** Usage
+
+   #+BEGIN_SRC bash
+     lein run
+   #+END_SRC
+
 ** Requirements
+
    - [X] Uses provided data
    - [X] Is a command line application
    - [X] Returns results in a human readable format
