@@ -1,0 +1,8 @@
+* Search
+** Requirements
+   - [ ] Uses provided data
+   - [ ] Is a command line application
+   - [ ] Returns results in a human readable format
+   - [ ] Results include related data
+   - [ ] Can search any field
+   - [ ] Can search for empty values
