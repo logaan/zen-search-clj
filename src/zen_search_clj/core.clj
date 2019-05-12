@@ -1,6 +1,21 @@
 (ns zen-search-clj.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def greeting
+  "Hello! Type exit to exit.")
+
+(def exit
+  "Goodbye!")
+
+(defn main []
+  (println greeting)
+
+  (loop [state {}]
+    (let [input (read-line)]
+      (when-not (= input "exit")
+        (println (str "You typed: " input))
+        (recur {}))))
+
+  (println exit))
+
+(main)
+
