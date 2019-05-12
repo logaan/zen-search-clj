@@ -5,4 +5,9 @@
    - [ ] Returns results in a human readable format
    - [ ] Results include related data
    - [ ] Can search any field
+     - [ ] Multi value fields
    - [ ] Can search for empty values
+** Bugs
+*** Needs to correctly handle multiple entities with the same value
+*** Nees to handle fields with multiple values
+*** Needs to do associated records

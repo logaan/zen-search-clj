@@ -1,18 +1,27 @@
-(ns zen-search-clj.core)
+(ns zen-search-clj.core
+  (:require [cheshire.core :as json]
+            [clojure.java.io :as io]
+            [clojure.pprint :refer [pprint]]))
+
+(defn load-json [path]
+  (reduce
+   (partial merge-with into)
+   (for [entity        (json/parse-stream (io/reader (io/resource path)))
+         [field value] entity]
+     {field {(str value) [entity]}})))
 
 (def data
-  {"users" {"_id" {"1" "Logan"
-                   ""  "Pei Shi"}}})
+  {"users"         (load-json "users.json")
+   "tickets"       (load-json "tickets.json")
+   "organizations" (load-json "organizations.json")})
+
+(defn dump-json []
+  (spit "out.json" (json/generate-string data)))
 
 (def prompts
   {:file  "Which file would you like to search?"
    :field "Which field should we look in?"
    :value "What's the value you'd like?"})
-
-(def initial-state
-  {:step  :file
-   :file  nil
-   :field nil})
 
 (defmulti tick (fn [state _input] (:step state)))
 
@@ -23,12 +32,13 @@
   {:state (assoc state :step :value :field field)})
 
 (defmethod tick :value [{:keys [file field]} value]
-  {:state initial-state
-   :output (or (get-in data [file field value])
-               "No result found.")})
+  {:state {:step :file}
+   :output (if-let [result (get-in data [file field value])]
+             (with-out-str (pprint result))
+             "No result found.")})
 
 (defn -main [& _args]
-  (loop [state initial-state]
+  (loop [state {:step :file}]
     (println (prompts (:step state)))
 
     (let [input (read-line)]
