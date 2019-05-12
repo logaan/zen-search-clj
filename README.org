@@ -3,11 +3,18 @@
    - [X] Uses provided data
    - [X] Is a command line application
    - [X] Returns results in a human readable format
-   - [ ] Results include related data
-   - [ ] Can search any field
-     - [ ] Multi value fields
+   - [X] Can search any field
+     - [X] Multi value fields
    - [X] Can search for empty values
-** Bugs
-*** TODO Needs to correctly handle multiple entities with the same value
-*** Nees to handle fields with multiple values
-*** Needs to do associated records
+   - [ ] Results include related data
+     - [ ] Users
+       - [ ] have one organization
+       - [ ] have many tickets (as submitter)
+       - [ ] have many tickets (as assignee)
+     - [ ] Organizations
+       - [ ] have many users
+       - [ ] have many tickets
+     - [ ] Tickets
+       - [ ] have one submitter (user)
+       - [ ] have one assignee (user)
+       - [ ] have one organization

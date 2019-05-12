@@ -4,19 +4,19 @@
             [clojure.pprint :refer [pprint]]))
 
 (defn load-json [path]
-  (reduce
-   (partial merge-with (partial merge-with into))
+  (->>
    (for [entity        (json/parse-stream (io/reader (io/resource path)))
          [field value] entity]
-     {field {(str value) [entity]}})))
+     (if (coll? value)
+       (map (fn [v] {field {(str v) [entity]}}) value)
+       [{field {(str value) [entity]}}]))
+   flatten
+   (reduce (partial merge-with (partial merge-with into)))))
 
 (def data
   {"users"         (load-json "users.json")
    "tickets"       (load-json "tickets.json")
    "organizations" (load-json "organizations.json")})
-
-(defn dump-json []
-  (spit "out.json" (json/generate-string data)))
 
 (def prompts
   {:file  "Which file would you like to search?"
