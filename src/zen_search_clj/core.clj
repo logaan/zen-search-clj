@@ -5,7 +5,7 @@
 
 (defn load-json [path]
   (reduce
-   (partial merge-with into)
+   (partial merge-with (partial merge-with into))
    (for [entity        (json/parse-stream (io/reader (io/resource path)))
          [field value] entity]
      {field {(str value) [entity]}})))

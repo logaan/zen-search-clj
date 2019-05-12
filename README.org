@@ -1,13 +1,13 @@
 * Search
 ** Requirements
-   - [ ] Uses provided data
-   - [ ] Is a command line application
-   - [ ] Returns results in a human readable format
+   - [X] Uses provided data
+   - [X] Is a command line application
+   - [X] Returns results in a human readable format
    - [ ] Results include related data
    - [ ] Can search any field
      - [ ] Multi value fields
-   - [ ] Can search for empty values
+   - [X] Can search for empty values
 ** Bugs
-*** Needs to correctly handle multiple entities with the same value
+*** TODO Needs to correctly handle multiple entities with the same value
 *** Nees to handle fields with multiple values
 *** Needs to do associated records
