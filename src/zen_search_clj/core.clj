@@ -1,20 +1,17 @@
 (ns zen-search-clj.core
-  (:require [cheshire.core :as json]
-            [clojure.java.io :as io]
+  (:require [cheshire.core :refer [parse-stream]]
+            [clojure.java.io :refer [resource reader]]
             [clojure.pprint :refer [pprint]]))
 
-(defn load-json [path]
-  (reduce
-   (partial merge-with (partial merge-with into))
-   (for [entity         (json/parse-stream (io/reader (io/resource path)))
-         [field values] entity
-         value          (flatten [values])]
-     {field {(str value) [entity]}})))
+(defn load-json [file]
+  (for [entity         (-> (str file ".json") resource reader parse-stream)
+        [field values] entity
+        value          (flatten [values])]
+    {[file field (str value)] [entity]}))
 
 (def data
-  {"users"         (load-json "users.json")
-   "tickets"       (load-json "tickets.json")
-   "organizations" (load-json "organizations.json")})
+  (reduce (partial merge-with into)
+          (flatten (map load-json ["users" "tickets" "organizations"]))))
 
 (def prompts
   {:file  "Which file would you like to search?"
@@ -31,7 +28,7 @@
 
 (defmethod tick :value [{:keys [file field]} value]
   {:state  {:step :file}
-   :output (if-let [result (get-in data [file field value])]
+   :output (if-let [result (data [file field value])]
              (with-out-str (pprint result))
              "No result found.")})
 
