@@ -4,14 +4,12 @@
             [clojure.pprint :refer [pprint]]))
 
 (defn load-json [path]
-  (->>
-   (for [entity        (json/parse-stream (io/reader (io/resource path)))
-         [field value] entity]
-     (if (coll? value)
-       (map (fn [v] {field {(str v) [entity]}}) value)
-       [{field {(str value) [entity]}}]))
-   flatten
-   (reduce (partial merge-with (partial merge-with into)))))
+  (reduce
+   (partial merge-with (partial merge-with into))
+   (for [entity         (json/parse-stream (io/reader (io/resource path)))
+         [field values] entity
+         value          (flatten [values])]
+     {field {(str value) [entity]}})))
 
 (def data
   {"users"         (load-json "users.json")
