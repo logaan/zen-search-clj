@@ -26,13 +26,13 @@
 (defmulti tick (fn [state _input] (:step state)))
 
 (defmethod tick :file [state file]
-  {:state (assoc state :step :field :file file)})
+  {:state (assoc state :step :field, :file file)})
 
 (defmethod tick :field [state field]
-  {:state (assoc state :step :value :field field)})
+  {:state (assoc state :step :value, :field field)})
 
 (defmethod tick :value [{:keys [file field]} value]
-  {:state {:step :file}
+  {:state  {:step :file}
    :output (if-let [result (get-in data [file field value])]
              (with-out-str (pprint result))
              "No result found.")})
