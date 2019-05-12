@@ -11,6 +11,37 @@
      lein run
    #+END_SRC
 
+** Example session
+
+   #+BEGIN_EXAMPLE
+     $ lein run
+     Which file would you like to search?
+     users
+     Which field should we look in?
+     tags
+     What's the value you'd like?
+     Clinton
+     [{"role" "agent",
+       "url" "http://initech.zendesk.com/api/v2/users/71.json",
+       "timezone" "Samoa",
+       "shared" false,
+       "external_id" "c972bb41-94aa-4f20-bc93-e63dbfe8d9ca",
+       "tags" ["Davenport" "Cherokee" "Summertown" "Clinton"],
+       "email" "danahinton@flotonic.com",
+       "name" "Prince Hinton",
+       "locale" "zh-CN",
+       "organization_id" 121,
+       "verified" false,
+       "signature" "Don't Worry Be Happy!",
+       "phone" "9064-433-892",
+       "_id" 71,
+       "created_at" "2016-04-18T11:05:43 -10:00",
+       "alias" "Miss Dana",
+       "active" true,
+       "last_login_at" "2013-05-01T01:18:48 -10:00",
+       "suspended" false}]
+   #+END_EXAMPLE
+
 ** Requirements
 
    - [X] Uses provided data
