@@ -36,7 +36,7 @@
                            (data [one "_id" (str (entity field-id))]))
 
                     (= file one)
-                    (assoc entity (str many "-as-" field)
+                    (assoc entity (str many "_as_" field)
                            (data [many field-id (str (entity "_id"))]))
 
                     :else entity)))
