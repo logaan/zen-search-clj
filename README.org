@@ -50,15 +50,15 @@
    - [X] Can search any field
      - [X] Multi value fields
    - [X] Can search for empty values
-   - [ ] Results include related data
-     - [ ] Users
-       - [ ] have one organization
-       - [ ] have many tickets (as submitter)
-       - [ ] have many tickets (as assignee)
-     - [ ] Organizations
-       - [ ] have many users
-       - [ ] have many tickets
-     - [ ] Tickets
-       - [ ] have one submitter (user)
-       - [ ] have one assignee (user)
-       - [ ] have one organization
+   - [X] Results include related data
+     - [X] Users
+       - [X] have one organization
+       - [X] have many tickets (as submitter)
+       - [X] have many tickets (as assignee)
+     - [X] Organizations
+       - [X] have many users
+       - [X] have many tickets
+     - [X] Tickets
+       - [X] have one submitter (user)
+       - [X] have one assignee (user)
+       - [X] have one organization

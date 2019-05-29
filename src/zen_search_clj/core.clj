@@ -65,5 +65,3 @@
         (let [{:keys [state output]} (tick state input)]
           (if output (println output))
           (recur state))))))
-
-(-main)
