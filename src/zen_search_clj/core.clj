@@ -19,6 +19,7 @@
 
 (defn load-json [file]
   (for [entity         (-> (str file ".json") resource reader parse-stream)
+        :let           [entity (into (sorted-map) entity)]
         [field values] entity
         value          (flatten [values])]
     {[file field (str value)] [entity]}))

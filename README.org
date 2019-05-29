@@ -18,28 +18,107 @@
      Which file would you like to search?
      users
      Which field should we look in?
-     tags
+     _id
      What's the value you'd like?
-     Clinton
-     [{"role" "agent",
-       "url" "http://initech.zendesk.com/api/v2/users/71.json",
-       "timezone" "Samoa",
-       "shared" false,
-       "external_id" "c972bb41-94aa-4f20-bc93-e63dbfe8d9ca",
-       "tags" ["Davenport" "Cherokee" "Summertown" "Clinton"],
-       "email" "danahinton@flotonic.com",
-       "name" "Prince Hinton",
-       "locale" "zh-CN",
-       "organization_id" 121,
-       "verified" false,
-       "signature" "Don't Worry Be Happy!",
-       "phone" "9064-433-892",
-       "_id" 71,
-       "created_at" "2016-04-18T11:05:43 -10:00",
-       "alias" "Miss Dana",
-       "active" true,
-       "last_login_at" "2013-05-01T01:18:48 -10:00",
-       "suspended" false}]
+     1
+     - _id: 1
+       active: true
+       alias: Miss Coffey
+       created_at: '2016-04-15T05:19:46 -10:00'
+       email: coffeyrasmussen@flotonic.com
+       external_id: 74341f74-9c79-49d5-9611-87ef9b6eb75f
+       last_login_at: '2013-08-04T01:03:27 -10:00'
+       locale: en-AU
+       name: Francisca Rasmussen
+       organization:
+       - _id: 119
+         created_at: '2016-02-29T03:45:12 -11:00'
+         details: Non profit
+         domain_names: [bleeko.com, pulze.com, xoggle.com, sultraxin.com]
+         external_id: 2386db7c-5056-49c9-8dc4-46775e464cb7
+         name: Multron
+         shared_tickets: false
+         tags: [Erickson, Mccoy, Wiggins, Brooks]
+         url: http://initech.zendesk.com/api/v2/organizations/119.json
+       organization_id: 119
+       phone: 8335-422-718
+       role: admin
+       shared: false
+       signature: Don't Worry Be Happy!
+       suspended: true
+       tags: [Springville, Sutton, Hartsville/Hartley, Diaperville]
+       tickets-as-assignee:
+       - _id: 1fafaa2a-a1e9-4158-aeb4-f17e64615300
+         assignee_id: 1
+         created_at: '2016-01-15T11:52:49 -11:00'
+         description: Elit exercitation veniam commodo nulla laboris. Dolore occaecat cillum
+           nisi amet in.
+         due_at: '2016-08-07T04:10:34 -10:00'
+         external_id: f6f639a4-a8af-4910-804f-5c3a80252653
+         has_incidents: true
+         organization_id: 115
+         priority: low
+         status: solved
+         subject: A Problem in Russian Federation
+         submitter_id: 44
+         tags: [Georgia, Tennessee, Mississippi, Marshall Islands]
+         type: problem
+         url: http://initech.zendesk.com/api/v2/tickets/1fafaa2a-a1e9-4158-aeb4-f17e64615300.json
+         via: voice
+       - _id: 13aafde0-81db-47fd-b1a2-94b0015803df
+         assignee_id: 1
+         created_at: '2016-03-30T08:35:27 -11:00'
+         description: Lorem ipsum eiusmod pariatur enim. Qui aliquip voluptate cupidatat
+           eiusmod aute velit non aute ullamco.
+         due_at: '2016-08-08T03:25:53 -10:00'
+         external_id: 6161e938-50cc-4545-acff-a4f23649b7c3
+         has_incidents: false
+         organization_id: 122
+         priority: urgent
+         status: solved
+         subject: A Problem in Malawi
+         submitter_id: 42
+         tags: [New Mexico, Nebraska, Connecticut, Arkansas]
+         type: task
+         url: http://initech.zendesk.com/api/v2/tickets/13aafde0-81db-47fd-b1a2-94b0015803df.json
+         via: voice
+       tickets-as-submitter:
+       - _id: fc5a8a70-3814-4b17-a6e9-583936fca909
+         assignee_id: 19
+         created_at: '2016-07-08T07:57:15 -10:00'
+         description: Ipsum reprehenderit non ea officia labore aute. Qui sit aliquip ipsum
+           nostrud anim qui pariatur ut anim aliqua non aliqua.
+         external_id: e8cab26b-f3b9-4016-875c-b0d9a258761b
+         has_incidents: true
+         organization_id: 120
+         priority: high
+         status: open
+         subject: A Nuisance in Kiribati
+         submitter_id: 1
+         tags: [Minnesota, New Jersey, Texas, Nevada]
+         type: problem
+         url: http://initech.zendesk.com/api/v2/tickets/fc5a8a70-3814-4b17-a6e9-583936fca909.json
+         via: voice
+       - _id: cb304286-7064-4509-813e-edc36d57623d
+         assignee_id: 11
+         created_at: '2016-03-30T11:43:24 -11:00'
+         description: Nostrud veniam eiusmod reprehenderit adipisicing proident aliquip.
+           Deserunt irure deserunt ea nulla cillum ad.
+         due_at: '2016-08-03T04:44:08 -10:00'
+         external_id: df00b850-ca27-4d9a-a91a-d5b8d130a79f
+         has_incidents: false
+         organization_id: 106
+         priority: urgent
+         status: pending
+         subject: A Nuisance in Saint Lucia
+         submitter_id: 1
+         tags: [Missouri, Alabama, Virginia, Virgin Islands]
+         type: task
+         url: http://initech.zendesk.com/api/v2/tickets/cb304286-7064-4509-813e-edc36d57623d.json
+         via: chat
+       timezone: Sri Lanka
+       url: http://initech.zendesk.com/api/v2/users/1.json
+       verified: true
    #+END_EXAMPLE
 
 ** Requirements
