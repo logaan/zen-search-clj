@@ -28,7 +28,7 @@
           (flatten (map load-json files))))
 
 (defn add-related-data [file entity]
-  (reduce (fn [{:strs [:_id] :as entity} [many field one]]
+  (reduce (fn [entity [many field one]]
             (let [field-id (str field "_id")]
               (cond (= file many)
                     (assoc entity field
